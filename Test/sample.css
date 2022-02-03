@@ -1,0 +1,25 @@
+@keyframes Sakana{
+    100% {
+        width:50px;
+    }
+    0% {
+        width:100px;
+    }
+}
+@keyframes Momiji{
+    100% {
+        width:50px;
+    }
+    43% {
+        width:52px;
+    }
+}
+.MakeCssDiv>.mikan{
+    animation: Sakana backwards 3s infinite ease 0.5s normal, Momiji backwards 3s infinite ease 0.5s normal;
+    height : 50px;
+    background-color : <Class.ColorClass object at 0x7fb1c90697f0>%;
+}
+.MakeCssDiv>.ringo{
+    height : 1000px;
+    background-color : 100%;
+}

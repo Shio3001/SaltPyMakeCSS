@@ -1,37 +1,34 @@
 
 import copy
-import MakeCss
-import Class
+import make_css
+import class_forprocess
+import specific_class
 
-main_class = Class.DATAforProcess()
-
-
-test1 = Class.ShapeClass(block_name="mikan")
+main_class = class_forprocess.DATAforProcess(rootname="dango ")
+test1 = class_forprocess.ShapeClass(block_name="mikan")
 test1.add_index("height", 50, "px")
-
-color1 = Class.ColorClass("#aa00bb")
-print(color1)
-
-if type(color1) is Class.ColorClass:
-    print("gya")
-
-test1.add_index("background-color", color1, "%")
-
-ani_test1 = Class.AnimationClass(animation_name="Sakana")
+test1.add_index("width", 100, "px")
+color1 = specific_class.ColorClass("#aa00bb")
+test1.add_index("background-color", color1)
+ani_test1 = class_forprocess.AnimationClass(animation_name="Sakana")
 ani_test1.add_index(progress_time=0, key="width", val=100, units="px")
 ani_test1.add_index(progress_time=100, key="width", val=50, units="px")
+ani_test1.set_animation_options("delay", 20, "s")
 test1.add_animation(ani_test1)
-
-ani_test2 = Class.AnimationClass(animation_name="Momiji")
-ani_test2.add_index(progress_time=43, key="width", val=52, units="px")
-ani_test2.add_index(progress_time=100, key="width", val=50, units="px")
+color1a = specific_class.ColorClass("#ff24bb")
+color1b = specific_class.ColorClass("#0024ff")
+ani_test2 = class_forprocess.AnimationClass(animation_name="Momiji")
+ani_test2.add_index(progress_time=0, key="margin", val=100, units="px")
+ani_test2.add_index(progress_time=100, key="margin", val=50, units="px")
+ani_test2.add_index(progress_time=0, key="background-color", val=color1a)
+ani_test2.add_index(progress_time=100, key="background-color", val=color1b)
+print(ani_test2.get_animation_options())
+ani_test2.set_animation_options("delay", 20, "s")
 test1.add_animation(ani_test2)
-
-test2 = Class.ShapeClass(block_name="ringo")
+test2 = class_forprocess.ShapeClass(block_name="ringo")
 test2.add_index("height", 1000, "px")
-test2.add_index("background-color", 100, "%")
-
+color2 = specific_class.ColorClass("#ffffbb")
+test2.add_index("background-color", color2)
 main_class.add_Shapes(test1)
 main_class.add_Shapes(test2)
-
-MakeCss.process(main_class, "./")
+make_css.processMain(main_class, "./")

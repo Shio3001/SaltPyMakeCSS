@@ -14,7 +14,7 @@ class SpecificClassBase(object, metaclass=abc.ABCMeta):
 
 
 class RectangularCoordinateClass():  # 直交座標系,xyz指定する必要があるものに使う
-    def __init__(self, x, y, z):
+    def __init__(self, x, y, z=None):
         self.index = {"x": x, "y": y, "z": z}
 
     def set_value(self, direction, value):

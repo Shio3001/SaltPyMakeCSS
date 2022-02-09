@@ -60,6 +60,7 @@ class DATAforProcess:
     def __init__(self, rootname="MakeCssDiv"):
         self.div_size = [100, 100]
         self.background_color = "#ff00ff"
+
         self.scope = "." + rootname
         self.Shapes = []
 

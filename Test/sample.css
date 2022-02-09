@@ -1,36 +1,36 @@
 /* animationの生成順序1 */
 @keyframes Sakana{
-   100% {
-      width:50px;
-   }
-   0% {
-      width:100px;
-   }
-}
-/* animationの生成順序2 */
-@keyframes Momiji{
-   100% {
-      background-color:#0024ff;
-   }
-   0% {
-      background-color:#ff24bb;
-   }
-   100% {
-      margin:50px;
-   }
-   0% {
-      margin:100px;
-   }
 }
 /* blockの生成順序1 */
-.dango >.mikan{
-   animation: Sakana backwards 5s infinite ease 20s normal, Momiji backwards 5s infinite ease 20s normal;
+.dango>.mikan{
+   position:absolute;
+   animation: Sakana backwards 5s infinite ease 20s normal;
    height : 50px;
    width : 100px;
    background-color : #aa00bb;
 }
+/* animationの生成順序2 */
+@keyframes tokushima{
+   100% {
+      top:100px;
+   }
+   0% {
+      top:0px;
+   }
+   100% {
+      left:100px;
+   }
+   0% {
+      left:0px;
+   }
+}
 /* blockの生成順序2 */
-.dango >.ringo{
-   height : 1000px;
+.dango>.ringo{
+   position:absolute;
+   animation: tokushima backwards 5s infinite ease 0s normal;
+   height : 100px;
+   width : 100px;
    background-color : #ffffbb;
+}
+.dango{
 }

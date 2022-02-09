@@ -4,6 +4,8 @@ import specific_class_base
 
 # get_elementはcssに挿入されるもの 適切に文字列を加工する必要がある
 
+G_irection_text = ["X", "Y", "Z"]
+
 
 class OmnidirectionalClass(specific_class_base.SpecificClassBase):  # marginなど4方向指定が必要なもの
     def __init__(self, top, right, bottom, left):
@@ -25,17 +27,40 @@ class ColorClass(specific_class_base.SpecificClassBase):
         return self.colorcode
 
 
-class RotateClass(specific_class_base.SpecificClassBase, specific_class_base.RectangularCoordinateClass):
-    def __init__(self, xr=0, yr=0, zr=0):
-        super.__init__(xr, yr, zr)
+class RotateClass(specific_class_base.SpecificClassBase):
+    def __init__(self, angle, direction="Z"):
+
+        if not direction in G_irection_text:
+            raise Exception("directionに設定された項目が不正です direction : {0}".format(direction))
+
+        self.direction = direction
+        self.angle = angle
 
     def get_element(self):
-        return self.colorcode
+        numberdict = {"X": 0, "Y": 0, "Z": 0}
+        numberdict[self.direction] = 1
+        numberlist = list(numberdict.values())
+        return_text = "rotate3d({0[0]}, {0[1]}, {0[2]}, {1}deg)".format(numberlist, self.angle)
+        return return_text
+
+
+class PositionClass(specific_class_base.SpecificClassBase):
+    def __init__(self, pos):
+        self.pos = pos
+
+    def get_element(self):
+        return_text = str(self.pos) + "px"
+
+        return return_text
 
 
 class_name_list = [
     "ColorClass",
-    "OmnidirectionalClass"
+    "OmnidirectionalClass",
+    "RotateClass",
+    "PositionClass"
 ]  # export
 
-# tet = RotateClass(100, 200, 300)
+
+# specific_class_base.RectangularCoordinateClass.__init__(self, xr, yr, zr)
+# こんな感じで多重継承時に親へのinitがcss 系ます

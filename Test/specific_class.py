@@ -5,6 +5,7 @@ import specific_class_base
 # get_elementはcssに挿入されるもの 適切に文字列を加工する必要がある
 
 G_irection_text = ["X", "Y", "Z"]
+# ここにあるのは数値のフォーマット指定のためで、topやleftなどを直接指定してはならない(rotate3dはtransformに対してかかっている)
 
 
 class OmnidirectionalClass(specific_class_base.SpecificClassBase):  # marginなど4方向指定が必要なもの
@@ -40,7 +41,7 @@ class RotateClass(specific_class_base.SpecificClassBase):
         numberdict = {"X": 0, "Y": 0, "Z": 0}
         numberdict[self.direction] = 1
         numberlist = list(numberdict.values())
-        return_text = "rotate3d({0[0]}, {0[1]}, {0[2]}, {1}deg)".format(numberlist, self.angle)
+        return_text = "rotate3d({0[0]}, {0[1]}, {0[2]}, {1})".format(numberlist, self.angle)
         return return_text
 
 
@@ -49,8 +50,16 @@ class PositionClass(specific_class_base.SpecificClassBase):
         self.pos = pos
 
     def get_element(self):
-        return_text = str(self.pos) + "px"
+        return_text = str(self.pos)
+        return return_text
 
+
+class CircleClass(specific_class_base.SpecificClassBase):
+    def __init__(self, shape_round=1):  # shape_round = 0 ~ 1の小数点の値で設定する
+        self.border_radius = shape_round * 50
+
+    def get_element(self):
+        return_text = str(self.border_radius)
         return return_text
 
 
@@ -58,7 +67,8 @@ class_name_list = [
     "ColorClass",
     "OmnidirectionalClass",
     "RotateClass",
-    "PositionClass"
+    "PositionClass",
+    "CircleClass"
 ]  # export
 
 

@@ -22,7 +22,7 @@ test2 = class_forprocess.ShapeClass(block_name="ringo")
 test2.add_index("height", 100, "px")
 test2.add_index("width", 100, "px")
 
-ani2_test1 = class_forprocess.AnimationClass(animation_name="ichigo")
+ani2_test1 = class_forprocess.AnimationClass(animation_name="ncwekuhgwighwiugbwiubwiubriwe")
 ani2_test1.add_index(progress_time=0, key="transform", val=rotate1a, units="deg")
 ani2_test1.add_index(progress_time=100, key="transform", val=rotate1b, units="deg")
 
@@ -42,7 +42,7 @@ ani_test2.add_index(progress_time=100, key="background-color", val=color1b)
 ani_test2.set_animation_options("delay", 20, "s")
 test2.add_animation(ani_test2)
 
-ani2_test2 = class_forprocess.AnimationClass(animation_name="matsuyama")
+ani2_test2 = class_forprocess.AnimationClass(animation_name="grjnekbniuekbheriukbniuerk")
 ani2_test2.add_index(progress_time=0, key="left", val=pos1a, units="px")
 ani2_test2.add_index(progress_time=100, key="left", val=pos1b, units="px")
 ani2_test2.add_index(progress_time=0, key="top", val=pos1c, units="px")

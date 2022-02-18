@@ -1,0 +1,67 @@
+/* animationの生成順序1 */
+@keyframes yodogawa{
+}
+
+/* animationの生成順序2 */
+@keyframes shinbashi{
+   100% {
+      left:100%;
+   }
+   0% {
+      left:0%;
+   }
+}
+
+/* blockの生成順序1 */
+.dango>.mikan{
+   position:absolute;
+   animation: yodogawa backwards 5s infinite ease 20s normal, shinbashi backwards 5s infinite ease 0s normal;
+   height : 50px;
+   width : 100px;
+   background-color : #aa00bb;
+}
+
+/* animationの生成順序3 */
+@keyframes Momiji{
+   100% {
+      background-color:#0024ff;
+   }
+   0% {
+      background-color:#ff24bb;
+   }
+}
+
+/* animationの生成順序4 */
+@keyframes grjnekbniuekbheriukbniuerk{
+   100% {
+      border-radius:50%;
+   }
+   0% {
+      border-radius:0%;
+   }
+   100% {
+      top:100px;
+   }
+   0% {
+      top:0px;
+   }
+   100% {
+      left:100px;
+   }
+   0% {
+      left:0px;
+   }
+}
+
+/* blockの生成順序2 */
+.dango>.ringo{
+   position:absolute;
+   animation: Momiji backwards 5s infinite ease 20s normal, grjnekbniuekbheriukbniuerk backwards 5s infinite ease 0s normal;
+   height : 100px;
+   width : 100px;
+   background-color : #ffffbb;
+}
+
+.dango{
+   position:relative;
+}

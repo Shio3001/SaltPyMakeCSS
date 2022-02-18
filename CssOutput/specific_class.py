@@ -3,9 +3,12 @@ import abc
 import specific_class_base
 
 # get_elementはcssに挿入されるもの 適切に文字列を加工する必要がある
+# ここにあるのは数値のフォーマット指定のためで、topやleftなどを直接指定してはならない(rotate3dはtransformに対してかかっている)
+# specific(明確) 数値指定や要素を明確かつ固定化する 例えばカラーコードは16進数表記や10進数表記など様々な指定方法がある。
+# この状態だと出力処理を阻害してしまうので#fffffなどの形式に統一したり
+# marginなど順番が必要なものの順序を確保する目的がある
 
 G_irection_text = ["X", "Y", "Z"]
-# ここにあるのは数値のフォーマット指定のためで、topやleftなどを直接指定してはならない(rotate3dはtransformに対してかかっている)
 
 
 class OmnidirectionalClass(specific_class_base.SpecificClassBase):  # marginなど4方向指定が必要なもの
@@ -63,7 +66,7 @@ class CircleClass(specific_class_base.SpecificClassBase):
         return return_text
 
 
-class_name_list = [
+G_class_name_list = [
     "ColorClass",
     "OmnidirectionalClass",
     "RotateClass",

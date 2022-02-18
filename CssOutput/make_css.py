@@ -22,7 +22,7 @@ class MakeCssClass:
         self.G_NG_TAGS_Message = "不適切なブロック名が設定されました 使用禁止:" + " ".join(self.G_NG_TAGS)
         # animationプロパティを使う
 
-        self.G_specific_class_types = specific_class.class_name_list
+        self.G_specific_class_types = specific_class.G_class_name_list
 
         self.GW_parent = ""
         self.GW_block_queue = []

@@ -1,6 +1,5 @@
 import color
 import abc
-
 import copy
 
 

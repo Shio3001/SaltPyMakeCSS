@@ -1,8 +1,8 @@
 
 import copy
-import make_css
-import class_forprocess
-import specific_class
+from . import make_css
+from . import class_forprocess
+from . import specific_class
 
 main_class = class_forprocess.DATAforProcess(rootname="dango")
 test1 = class_forprocess.ShapeClass(block_name="mikan")
@@ -19,10 +19,13 @@ test1.add_animation(ani_test1)
 rotate1a = specific_class.RotateClass(0, direction="Z")
 rotate1b = specific_class.RotateClass(360, direction="Z")
 test2 = class_forprocess.ShapeClass(block_name="ringo")
-test2.add_index("height", 100, "px")
+test2.add_index("height", 54636363, "px")
 test2.add_index("width", 100, "px")
 
-ani2_test1 = class_forprocess.AnimationClass(animation_name="ncwekuhgwighwiugbwiubwiubriwe")
+RINGO = specific_class.ColorClass("#cccccc")
+test2.add_index("color", RINGO)
+
+ani2_test1 = class_forprocess.AnimationClass(animation_name="cutrhnicurnhtiunhbcirxu")
 ani2_test1.add_index(progress_time=0, key="transform", val=rotate1a, units="deg")
 ani2_test1.add_index(progress_time=100, key="transform", val=rotate1b, units="deg")
 
@@ -42,7 +45,7 @@ ani_test2.add_index(progress_time=100, key="background-color", val=color1b)
 ani_test2.set_animation_options("delay", 20, "s")
 test2.add_animation(ani_test2)
 
-ani2_test2 = class_forprocess.AnimationClass(animation_name="grjnekbniuekbheriukbniuerk")
+ani2_test2 = class_forprocess.AnimationClass(animation_name="hjiyjmyojmroi")
 ani2_test2.add_index(progress_time=0, key="left", val=pos1a, units="px")
 ani2_test2.add_index(progress_time=100, key="left", val=pos1b, units="px")
 ani2_test2.add_index(progress_time=0, key="top", val=pos1c, units="px")

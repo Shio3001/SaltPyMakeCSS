@@ -1,4 +1,4 @@
-import color
+from . import color
 import abc
 import copy
 

@@ -1,8 +1,8 @@
 import copy
 import imp
 import traceback
-import class_forprocess
-import specific_class
+from . import class_forprocess
+from . import specific_class
 import time
 import datetime
 import inspect

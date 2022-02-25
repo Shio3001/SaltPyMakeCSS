@@ -1,5 +1,5 @@
 
-import template_class_base
+from . import template_class_base
 
 
 class ImageClass(template_class_base.TemplateClassBase):

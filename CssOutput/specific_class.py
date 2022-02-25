@@ -1,6 +1,6 @@
-import color
+from . import color
 import abc
-import specific_class_base
+from . import specific_class_base
 
 # get_elementはcssに挿入されるもの 適切に文字列を加工する必要がある
 # ここにあるのは数値のフォーマット指定のためで、topやleftなどを直接指定してはならない(rotate3dはtransformに対してかかっている)

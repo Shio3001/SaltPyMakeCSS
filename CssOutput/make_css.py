@@ -17,7 +17,7 @@ def G_get_time():
 
 
 class MakeCssClass:
-    def __init__(self):
+    def __init__(self, write_path):
         self.G_NG_TAGS = ["div", "body"]
         self.G_NG_TAGS_Message = "不適切なブロック名が設定されました 使用禁止:" + " ".join(self.G_NG_TAGS)
         # animationプロパティを使う
@@ -37,9 +37,11 @@ class MakeCssClass:
         self.G_logfile = open(self.G_outputfileName+"_log.txt", "w")
 
         self.G_addeds_animation = []
+
+        self.G_write_path = write_path
     # ここが呼ばれる
 
-    def processMain(self, root_class, write_path):
+    def processMain(self, root_class):
 
         self.W_write_reception_parent_start()
         self.W_write_reception_log_start()

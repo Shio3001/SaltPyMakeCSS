@@ -184,7 +184,7 @@ class MakeCssClass:
                 if not v[1] is None:
                     self.W_write_reception_block_enter("{0} : {1}{2};\n".format(k, v[0], v[1]), indent=1)
                 else:
-                    self.W_write_reception_block_enter("{0} : {1}{2};\n".format(k, v[0]), indent=1)
+                    self.W_write_reception_block_enter("{0} : {1};\n".format(k, v[0]), indent=1)
 
             else:
                 if not v[1] is None:

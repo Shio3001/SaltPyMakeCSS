@@ -39,7 +39,7 @@ class AnimationClass:
                 insert_point = roop_aid[0]
 
         print("insert_point", insert_point, progress_time)
-        self.animation_index_list.insert(insert_point, index_array)
+        self.animation_index_list.insert(int(insert_point), index_array)
 
 
 class ShapeClass:
